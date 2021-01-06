@@ -29,7 +29,8 @@ if ide:
     os.remove(ide_mode_conf)
     from machine import UART
     import lcd
-    lcd.init(color=lcd.PINK)
+    lcd.init(type=3,freq=15000000,color=lcd.PINK)
+    lcd.rotation(1)
     repl = UART.repl_uart()
     repl.init(1500000, 8, None, 1, read_buf_len=2048, ide=True, from_ide=False)
     sys.exit()    
