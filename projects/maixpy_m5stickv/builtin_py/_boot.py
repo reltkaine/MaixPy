@@ -81,7 +81,7 @@ pmu = axp192()
 pmu.enablePMICSleepMode(True)
 
 def lcd_init():
-  lcd.init(type=3)
+  lcd.init(type=2)
   lcd.register(0x3A, 0x05)
   lcd.register(0xB2, [0x05, 0x05, 0x00, 0x33, 0x33])
   lcd.register(0xB7, 0x23)
