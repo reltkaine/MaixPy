@@ -97,6 +97,7 @@ def lcd_init():
   lcd.register(0xE0, [0x23, 0x70, 0x06, 0x0C, 0x08, 0x09, 0x27, 0x2E, 0x34, 0x46, 0x37, 0x13, 0x13, 0x25, 0x2A])
   lcd.register(0xE1,[0x70, 0x04, 0x08, 0x09, 0x07, 0x03, 0x2C, 0x42, 0x42, 0x38, 0x14, 0x14, 0x27, 0x2C])
 lcd_init()
+lcd.init(type=3,freq=15000000,color=lcd.PINK)
 lcd.rotation(1) #Rotate the lcd 180deg
 
 try:
@@ -179,7 +180,7 @@ while 1:
             lcd.draw_string(lcd.width()//2-100,lcd.height()//2-4, "Error: Sensor Init Failed", lcd.WHITE, lcd.RED)   
         time.sleep(0.1)
         continue
-
+lcd.init(type=3,freq=15000000,color=lcd.PINK)
 lcd.rotation(1) #Rotate the lcd 180deg
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA) #QVGA=320x240
